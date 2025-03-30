@@ -13,8 +13,6 @@ Database of information related to video games
 
 ## Functional Requirements
 
-
-
 * What should a user be able to do with your database?
   * Add, delete, update their reviews
   * Correct informations related to games, publishers, developers.
@@ -31,7 +29,7 @@ The database entities:
 
 1. ____Games:____
    
-   - ____Attributes:____ ID (INT), name (VARCHAR), release_date (DATE),                     platform_id (INT), genre_id (INT), publisher_id (INT),                     developer_studio (INT)
+   - ____Attributes:____ ID (INT), name (VARCHAR), release_date (DATE), platform_id (INT), genre_id (INT), publisher_id (INT), developer_studio (INT)
    
    - ____Constraints:____ Primary key on ID, foreign key referencing platforms table on platform ID, foreign key referencing genres on genre ID, foreign key referencing publishers on publisher ID, foreign key referencing developer_studios on developer ID
 
@@ -49,25 +47,25 @@ The database entities:
 
 4. ____Players:____
    
-   - ____Attributes:____ ID (INT), first_name (VARCHAR), last_name                     (VARCHAR), username (VARCHAR), gender (ENUM),                     location (VARCHAR)
+   - ____Attributes:____ ID (INT), first_name (VARCHAR), last_name (VARCHAR), username (VARCHAR), gender (ENUM), location (VARCHAR)
    
    - ____Constraints:____ Primary key on ID
 
 5. ____Reviews:____
    
-   - ____Attributes:____ review (INT), comment (VARCHAR), game_id (INT),                     player_id (INT)
+   - ____Attributes:____ review (INT), comment (VARCHAR), game_id (INT),  player_id (INT)
    
    - ____Constraints:____ Primary key on game_id and player_id, foreign key referencing games on game ID, foreign key referencing players on player ID
 
 6. ____Developer studios:____
    
-   - ____Attributes:____ ID (INT), name (VARCHAR), founded_year (YEAR),                     location (VARCHAR), website (VARCHAR)
+   - ____Attributes:____ ID (INT), name (VARCHAR), founded_year (YEAR), location (VARCHAR), website (VARCHAR)
    
    - ____Constraints:____ Primary key on ID
 
 7. ____Publishers:____
    
-   - ____Attributes:____ ID (INT), name (VARCHAR), founded_year (YEAR),                     location (VARCHAR), website (VARCHAR)
+   - ____Attributes:____ ID (INT), name (VARCHAR), founded_year (YEAR), location (VARCHAR), website (VARCHAR)
    
    - Constraints: Primary key on ID
 
@@ -82,8 +80,6 @@ The database entities:
 In this section you should include your entity relationship diagram and describe the relationships between the entities in your database.
 
 ![ER_games.svg](ER_games.svg)
-
-
 
 ## Optimizations
 
