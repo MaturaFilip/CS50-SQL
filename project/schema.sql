@@ -12,10 +12,10 @@ CREATE TABLE IF NOT EXISTS `games` (
     `publisher_id` INT,
     `developer_studio_id` INT,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`platform_id`) REFERENCES `platforms` (`id`),
-    FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`),
-    FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`),
-    FOREIGN KEY (`developer_studio_id`) REFERENCES `developer_studios` (`id`)
+    FOREIGN KEY (`platform_id`) REFERENCES `platforms` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`developer_studio_id`) REFERENCES `developer_studios` (`id`) ON DELETE CASCADE
 
 );
 
@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS `reviews` (
     `game_id` INT,
     `player_id` INT,
     PRIMARY KEY(`game_id`, `player_id`),
-    FOREIGN KEY (`game_id`) REFERENCES `games` (`id`),
-    FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
+    FOREIGN KEY (`game_id`) REFERENCES `games` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
 );
 
 
@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `dev_pub` (
     `developer_studio` INT,
     `publisher` INT,
     PRIMARY KEY(`developer_studio`, `publisher`),
-    FOREIGN KEY (`developer_studio`) REFERENCES `developer_studios` (`id`),
-    FOREIGN KEY (`publisher`) REFERENCES `publishers` (`id`)
+    FOREIGN KEY (`developer_studio`) REFERENCES `developer_studios` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`publisher`) REFERENCES `publishers` (`id`) ON DELETE CASCADE
 );
 
 -- views
